@@ -1,0 +1,55 @@
+import random
+
+def bilgisayarSecimUret():
+    n = random.randint(1, 3)
+    if n == 1:
+        return "Taş"
+    elif n == 2:
+        return "Kağıt"
+    else:
+        return "Makas"
+
+def hileliBilgisayarSecimiUret(kullaniciSecimi):    # Fonksiyonda, Kullanıcı hangisini seçerse seçsin Bilgisayarın kazanıcağı bir kod bloğu oluşturduk.
+    if kullaniciSecimi == "Kağıt":
+        return "Makas"
+    elif kullaniciSecimi == "Taş":
+        return "Kağıt"
+    else:
+        return "Taş"
+
+skorKullanici = 0
+skorBilgisayar = 0
+# < >
+
+while True: #Sonsuz Döngü.
+    
+    kullaniciSecimi = input("Taş, Kağıt, Makas: ")
+    
+    n = random.randint(1, 2)    # Kullanıcıda şüphe uyandırmadan hem hileli, hem de hilesiz fonksiyon kısmını kullanıcak.
+    if n == 1:
+        bilgisayarSecimi = bilgisayarSecimUret()      # Hileli seçim yaptırıyoruz.
+    else:
+        bilgisayarSecimi = hileliBilgisayarSecimiUret(kullaniciSecimi)
+    print("Bilgisayar Seçim: ", bilgisayarSecimi)
+
+    
+    if bilgisayarSecimi == kullaniciSecimi:
+        print("BERABERE")
+    elif bilgisayarSecimi == "Taş" and kullaniciSecimi == "Kağıt":
+        skorKullanici += 1
+    elif bilgisayarSecimi == "Kağıt" and kullaniciSecimi == "Makas":
+        skorKullanici += 1
+    elif bilgisayarSecimi == "Makas" and kullaniciSecimi == "Taş":
+        skorKullanici += 1
+    else:
+        skorBilgisayar += 1
+
+    print("Skorunuz: ", skorKullanici ,"\nBilgisayar Skoru: ", skorBilgisayar)
+
+    if skorKullanici == 3 or skorBilgisayar == 3:
+        break
+
+if skorBilgisayar > skorBilgisayar:
+    print("KAYBETTİNİZ.")
+else:
+    print("KAZANDINIZ.")
