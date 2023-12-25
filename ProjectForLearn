@@ -49,6 +49,7 @@ while True: #Sonsuz Döngü.
     if skorKullanici == 3 or skorBilgisayar == 3:
         break
 
+
 if skorBilgisayar > skorBilgisayar:
     print("KAYBETTİNİZ.")
 else:
