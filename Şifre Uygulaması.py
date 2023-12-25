@@ -7,10 +7,7 @@ lowerLetters = string.ascii_lowercase
 upperLetters = string.ascii_uppercase
 allCharacters = [lowerLetters, numbers, upperLetters, symbols]
 
-print(numbers)
-print(symbols)
-print(lowerLetters)
-print(upperLetters)
+print(allCharacters)
 
 password = ""
 
@@ -29,15 +26,13 @@ for j in range(4):      # Yukarıda ki kod bloğunun kısa ve daha kullanışlı
 
 password = list(password)   
 random.shuffle(password)    #Şifreyi belli bir sıraya tabii tutmadan karıştırma komutunu kullandık.
-print(password)
-
+print(f"Rastgele Üretilen Şifrenin List Hali: {password}")
 
 
 newPassword = ""
 
 # for i in password:
 #     newPassword += i
-
 newPassword = newPassword.join(password)
 
-print(newPassword)
+print(f"Üretilen Şifre: {newPassword}")
